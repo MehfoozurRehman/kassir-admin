@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# POS Admin: Cloud Point-of-Sale & Store Management Portal
+
+An administrative store control panel, inventory matrix manager, and cashier terminal orchestration dashboard built with Next.js 15 App Router (Turbopack), React 19, Convex real-time backend, TanStack Table, and Tailwind CSS v4.
+
+## Overview
+
+`pos-admin` centralizes multi-store retail and restaurant operations:
+- **Inventory & Orders**: Paginated catalog filtering via TanStack Table v8.
+- **Visual Analytics**: Real-time sales metrics and revenue breakdown charts (Recharts v3).
+- **Store Layouts**: Drag-and-drop table and department layout management (`@dnd-kit/core`).
+- **Real-Time Sync**: Instant order notifications and live stock decrements via Convex.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (v15 App Router, Turbopack)
+- **Backend & Database**: [Convex](https://convex.dev/) (`convex`)
+- **Data Grids & Charts**: TanStack Table v8, Recharts v3, Tabler Icons, Lucide Icons
+- **Frontend Core**: React 19, TypeScript, Radix UI Primitives, Vaul Drawers
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`)
+
+## Prerequisites
+
+- Node.js (v20 or higher recommended)
+- Package manager (`pnpm` recommended)
+- Convex deployment instance
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Configure Environment Variables**:
+   Create a `.env.local` file:
+   ```env
+   NEXT_PUBLIC_CONVEX_URL="your-convex-deployment-url"
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Start the Convex Backend**:
+   ```bash
+   npx convex dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. **Run the Development Server**:
+   ```bash
+   pnpm dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. **Access the Dashboard**:
+   Open `http://localhost:3000` in your web browser.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `pnpm dev` - Starts Next.js dev server with Turbopack.
+- `pnpm build` - Compiles the dashboard for production.
+- `pnpm start` - Starts the production server.
+- `pnpm format` - Formats code using Prettier.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Created by [Mehfooz-ur-Rehman](https://github.com/MehfoozurRehman).
