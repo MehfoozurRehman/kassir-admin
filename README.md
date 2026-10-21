@@ -42,14 +42,13 @@ Then run:
 
 ```bash
 npx convex dev    # Convex backend
-pnpm dev          # runs api.js, then next dev --turbopack
+pnpm dev          # next dev --turbopack
 ```
 
 Open `http://localhost:3000`. Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`, `pnpm format`.
 
 ## What I learned / what I'd do next
 
-- `api.js` is a minified, obfuscated script that runs before `dev`, `build` and `start`. It should be reviewed, and removed if it is not needed.
 - The dashboard home page (`/dashboard`) renders its chart and table from a bundled `app/dashboard/data.json` file, not from Convex. The shops and payments pages do use Convex. Either connect the home page to live data or remove the sample file.
 - There are no automated tests.
 - The `create-admin` route and the `createAdmin` mutation do not check for an existing signed-in admin. Access control should be added before any deployment.
